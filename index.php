@@ -1,5 +1,5 @@
 <html><center>
-    <form>
+   
     <h1>Calculadora Compensar</h1>
 
     
@@ -40,13 +40,6 @@ cuales se llegaran a implementar para casa funcion-->
 <button type="button" onclick="agregarItem(25.800);" class="btn btn-primary">Clases de Baloncesto </br> desde: </br>$25.800</button>
 <button type="button" onclick="agregarItem(39.900);" class="btn btn-primary">Clases de Futbol </br> femenino desde: </br>$39.900</button>
 
-</br>
-</br> 
-</br> 
-</br>
-</br>
- </br> 
-</br> 
 <form action="index.php" method="POST">
 <hr>
 <h2> Realice el Descuento de su compra </br>de manera mas rapida y efectiva</h2>
@@ -77,7 +70,7 @@ if(isset($_POST["enviar"])){
     $total = $precio;
     $descuento = ($desc/100)*$total;
     $totaldesc = $total - $descuento;
-    echo "<h2>PRECIOS..</h2></br>";
+    echo "<h2>PRECIOS</h2></br>";
     echo "Total Precio Sin Descuento: " . $total . "<br>";
     echo "Descuento Depositado: " . $desc . "<br>";
     echo "Total precio Final: " . $totaldesc;
@@ -86,6 +79,7 @@ if(isset($_POST["enviar"])){
 </form>
 <!-- A continuacion encontramos diferentes funciones para realizar -->
 </form>
+
 <script>
     function reset() {
         edt = document.getElementById("inputResultado");
@@ -131,6 +125,24 @@ body {
     background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
 }
     
+
 </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </html>
