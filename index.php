@@ -9,17 +9,7 @@ pagina y su titulo-->
 
 <title>Operaciones Compensar</title>
 
-
-
-
-<h2> Realiza tus operaciones mas raido y efectivo</h2>
-
-
-
-
-
-
-
+<h2> Realiza tus operaciones mas rapido y efectivo</h2>
 
 </head>
 <body>
@@ -41,7 +31,7 @@ pagina y su titulo-->
 <button type="button" onclick="restar();">-</button>
 <button type="button" onclick="multiplicar();">*</button>
 <button type="button" onclick="dividir();">/</button>
-<p>El total es: <span id="resultado"></p>
+<h2>El total es: <span id="resultado"></h2>
 
 </form>
 
@@ -86,7 +76,7 @@ pagina y su titulo-->
 
 <body>
 
-<hr>
+
 <form action="index.php" method="POST">
 <!-- En este apartado encontramos lo que es los diferentes espacios 
 para introducir los valores-->
@@ -118,10 +108,10 @@ if(isset($_POST["enviar"])){
     $total = $precio;
     $descuento = ($desc/100)*$total;
     $totaldesc = $total - $descuento;
-    echo "<h2>PRECIOS</h2></br>";
-    echo "Total Precio Sin Descuento: " . $total . "<br>";
-    echo "Descuento Depositado: " . $desc . "<br>";
-    echo "Total precio Final: " . $totaldesc;
+    echo "<h1>PRECIOS</h1>";
+    echo "<h3>Total Precio Sin Descuento: " . $total . "<br></h3> ";
+    echo "<h3>Descuento Depositado:" . $desc . "<br></h3> ";
+    echo "<h3>Total precio Final: " . $totaldesc. "<br></h3> ";
 }
 
 
