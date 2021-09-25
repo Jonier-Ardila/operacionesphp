@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html><center>
    
     <h1>Calculadora Compensar</h1>
@@ -8,40 +9,87 @@ pagina y su titulo-->
 
 <title>Operaciones Compensar</title>
 
+
+
+
 <h2> Realiza tus operaciones mas raido y efectivo</h2>
+
+
+
+
+
+
+
+
 </head>
 <body>
 
-<from method="post" action="operacion.php">
+<form id="Formulario" name="">
+    <label>Ingrese primer Digito: </label>
+    <input type="number" name="" id="numero1" autofocus placeholder="Digite el valor">
+    </br>
+</br>
+<label>Ingrese Segundo Digito: </label>
+<input type="number" name="" id="numero2" placeholder="Digite el valor">
+
+</br>
+</br>
+
+
+<button onclick="Borrar();"><--</button>
+<button type="button" onclick="sumar();">+</button>
+<button type="button" onclick="restar();">-</button>
+<button type="button" onclick="multiplicar();">*</button>
+<button type="button" onclick="dividir();">/</button>
+<p>El total es: <span id="resultado"></p>
+
+</form>
+
     
-<td><input type="text" class="from-control" placeholder="Escribe tu operación" id="inputResultado"/></td>
 
-</br>
-</br>
-<!-- En este apartado encontramos los diferentes botones los 
-cuales se llegaran a implementar para casa funcion-->
+<script>
+    function limpiar(){
+        documen.getElementById('Formulario').reset();
+    }
+    function sumar() {
+        var x = parseInt(document.getElementById('numero1').value);
+        var y = parseInt(document.getElementById('numero2').value);
+        alert ("Su Operacion esta siendo procesada");
+        document.getElementById('resultado').innerHTML = x+y;
+    
+    }
+    function restar() {
+        var x = parseInt(document.getElementById('numero1').value);
+        var y = parseInt(document.getElementById('numero2').value);
+        alert ("Su Operacion esta siendo procesada");
+        document.getElementById('resultado').innerHTML = x-y;
+    
+    }
+    function multiplicar() {
+        var x = parseInt(document.getElementById('numero1').value);
+        var y = parseInt(document.getElementById('numero2').value);
+        alert ("Su Operacion esta siendo procesada");
+        document.getElementById('resultado').innerHTML = x*y;
+    
+    }
+    function dividir() {
+        var x = parseInt(document.getElementById('numero1').value);
+        var y = parseInt(document.getElementById('numero2').value);
+        alert ("Su Operacion esta siendo procesada");
+        document.getElementById('resultado').innerHTML = x/y;
+    
+    }
+</script>
 
-<button type="button" onclick="reset();" class="btn btn-primary"><--</button>
-<button type="button" onclick="agregarItem('+')" class="btn btn-primary">+</button>
-<button type="button" onclick="agregarItem('-')" class="btn btn-primary">-</button>
-<button type="button" onclick="agregarItem('*')" class="btn btn-primary">*</button>
-<button type="button" onclick="agregarItem('/')" class="btn btn-primary">/</button>
 
-</br>
-</br>
-<button type="button" onclick="calcular();" class="btn btn-primary">Calcular</button>
-</br>
-</br>
-</br>
+</body>
 
-<button type="button" onclick="agregarItem(17.700);" class="btn btn-primary">Alquiler de Cancha</br> de futbol, desde: </br>$17.700</button>
-<button type="button" onclick="agregarItem(23.500);" class="btn btn-primary">Clases de Taekwondo </br> desde: </br>$23.500</button>
-<button type="button" onclick="agregarItem(21.300);" class="btn btn-primary">Clases de Futbol </br> desde: </br>$21.300</button>
-<button type="button" onclick="agregarItem(25.800);" class="btn btn-primary">Clases de Baloncesto </br> desde: </br>$25.800</button>
-<button type="button" onclick="agregarItem(39.900);" class="btn btn-primary">Clases de Futbol </br> femenino desde: </br>$39.900</button>
+<body>
 
-<form action="index.php" method="POST">
 <hr>
+<form action="index.php" method="POST">
+<!-- En este apartado encontramos lo que es los diferentes espacios 
+para introducir los valores-->
 <h2> Realice el Descuento de su compra </br>de manera mas rapida y efectiva</h2>
 </br>
  </br> 
@@ -59,7 +107,7 @@ cuales se llegaran a implementar para casa funcion-->
 <input type="submit" value="enviar" name="enviar" id="enviar">
 </from>
 
-</body>
+
 <hr>
 <?php
 // En este apartado encontramos la condicion if para poder realizar 
@@ -75,38 +123,12 @@ if(isset($_POST["enviar"])){
     echo "Descuento Depositado: " . $desc . "<br>";
     echo "Total precio Final: " . $totaldesc;
 }
+
+
 ?>
-</form>
+</body>
 <!-- A continuacion encontramos diferentes funciones para realizar -->
-</form>
 
-<script>
-    function reset() {
-        edt = document.getElementById("inputResultado");
-        edt.value="";
-    }
-    function agregarItem(item){
-        edt = document.getElementById("inputResultado");
-        valorViejo = edt.value;
-        valorNuevo = valorViejo+item;
-        edt.value=valorNuevo;
-    }
-    function calcular() {
-        edt = document.getElementById("inputResultado");
-        valor = edt.value;
-        $.ajax({
-            url:'calculo.php',
-            method:'post',
-            data: {'calculo':valor}
-        }).done(function (resultado){
-            edt.value = resultado;
-        });
-    }
-
-
-
-
-</script>
 
 
 <!--En este apartado encontramos el diseño de la pagina,
